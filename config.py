@@ -275,20 +275,31 @@ AI_PROVIDERS = [
 ]
 
 # WordPress (per instance — each niche has its own WP site)
+# WP_URL can be:
+#   https://myblog.com              → REST API used  (/wp-json/wp/v2)
+#   https://myblog.com/graphql      → GraphQL used   (WPGraphQL plugin)
+_wp_url_raw = _get("WP_URL")
+_wp_base    = _wp_url_raw.replace("/graphql", "").rstrip("/") if _wp_url_raw else ""
+_wp_graphql = _wp_url_raw if "graphql" in _wp_url_raw.lower() else ""
+
 WORDPRESS = {
-    "url":           _get("WP_URL"),                   # e.g. https://myblog.com
-    "username":      _get("WP_USERNAME"),
-    "app_password":  _get("WP_APP_PASSWORD"),          # WP Application Password
-    "default_status": _get("WP_POST_STATUS", "draft"), # draft | publish
-    "author_id":     _get_int("WP_AUTHOR_ID", 1),
+    "url":            _wp_url_raw,                      # as-is from .env
+    "base_url":       _wp_base,                         # site root (no /graphql)
+    "graphql_url":    _wp_graphql or "",                # non-empty = use GraphQL
+    "use_graphql":    bool(_wp_graphql),
+    "username":       _get("WP_USERNAME"),
+    "app_password":   _get("WP_APP_PASSWORD"),
+    "default_status": _get("WP_POST_STATUS", "draft"),  # draft | publish
+    "author_id":      _get_int("WP_AUTHOR_ID", 1),
 }
 
 # Image generation
 IMAGE_GEN = {
-    "provider":    "pollinations",                     # only free option for now
+    "provider":    "pollinations",
     "base_url":    "https://image.pollinations.ai/prompt/",
+    "api_key":     _get("POLLINATIONS_API_KEY"),        # optional paid key
     "width":       1200,
-    "height":      630,                                # OG image ratio
+    "height":      630,
     "model":       _get("POLLINATIONS_MODEL", "flux"),
     "save_dir":    MEDIA_DIR / "generated",
     "timeout_sec": 60,

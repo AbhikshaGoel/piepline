@@ -483,7 +483,8 @@ class Blogger:
 
         wp_url = wp_result.get("link", "")
         job.wp_url     = wp_url
-        job.wp_post_id = wp_result.get("id", 0)
+        # GraphQL returns 'databaseId' (int), REST returns 'id' (int)
+        job.wp_post_id = wp_result.get("databaseId") or wp_result.get("id", 0)
 
         log.info(f"✅ Published: {wp_url}")
 
