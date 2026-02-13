@@ -1,0 +1,29 @@
+# ── Core ──────────────────────────────────────────────
+feedparser>=6.0.11          # RSS parsing
+python-dotenv>=1.0.0        # .env loading
+requests>=2.31.0            # HTTP (Telegram, Facebook, etc.)
+numpy>=1.24.0               # Cosine similarity
+
+# ── Local AI (Layer 1) ────────────────────────────────
+sentence-transformers>=2.7.0  # all-MiniLM-L6-v2 embeddings
+
+# ── Vector DB (same-day dedup) ────────────────────────
+chromadb>=0.5.0             # Local persistent vector store
+
+# ── Twitter ───────────────────────────────────────────
+requests-oauthlib>=1.3.1    # OAuth1 for Twitter API
+
+# ── YouTube (optional) ───────────────────────────────
+# google-api-python-client>=2.100.0
+# google-auth>=2.23.0
+# google-auth-oauthlib>=1.1.0
+
+# ── Scheduler (optional, falls back to polling loop) ──
+# apscheduler>=3.10.4
+
+# ── Image generation for dummy post image ─────────────
+Pillow>=10.0.0              # Create dummy.jpg if missing
+
+# ── Dev / Testing ─────────────────────────────────────
+# pytest>=7.4.0
+# pytest-mock>=3.11.0
