@@ -4,8 +4,8 @@ main.py - News AI Pipeline Orchestrator.
 Usage:
   python main.py                  # Dry run (no DB writes, no posting)
   python main.py --live           # Full live run
-  python main.py --test           # Verbose output, no DB or posting
-  python main.py --status         # Show DB stats
+  python main.py --test           # Verbose, no DB, no posting
+  python main.py --status         # Show DB stats and exit
   python main.py --reset-rotation # Reset category rotation
   python main.py --live --limit 6 # Live run, select 6 articles
 """
@@ -23,7 +23,7 @@ from parser import RSSParser
 from ai import AIEngine
 from poster import Poster
 
-# ── Logging setup ─────────────────────────────────────
+# ── Logging ───────────────────────────────────────────
 logging.basicConfig(
     level=getattr(logging, config.LOG_LEVEL, logging.INFO),
     format="%(asctime)s [%(name)s] %(levelname)s: %(message)s",
@@ -35,10 +35,10 @@ logging.basicConfig(
 log = logging.getLogger("main")
 
 
-# ── Rotation (DB-backed) ──────────────────────────────
+# ── Rotation ──────────────────────────────────────────
 
 def get_rotated_order() -> List[str]:
-    """Return categories sorted by rotated priority."""
+    """Return category list rotated by current run index."""
     base = sorted(
         [c for c in config.CATEGORY_ANCHORS if c != "NOISE"],
         key=lambda x: config.CATEGORY_ANCHORS[x]["priority"],
@@ -47,10 +47,10 @@ def get_rotated_order() -> List[str]:
         return base
 
     state = db.get_rotation()
-    idx   = state["last_index"] % len(base)
+    idx = state["last_index"] % len(base)
     rotated = base[idx:] + base[:idx]
 
-    log.info(f"🔄 Run #{state['run_count']} | Starting from: {rotated[0]}")
+    log.info(f"🔄 Run #{state['run_count']} | Rotation index={state['last_index']} | Starting from: {rotated[0]}")
     log.info(f"   Order: {' → '.join(rotated)}")
     return rotated
 
@@ -67,7 +67,6 @@ class NewsPipeline:
     def run(self, limit: int = 4, live: bool = False,
             skip_noise: bool = True) -> Dict:
         t0 = time.time()
-
         _banner(live)
 
         # ── Step 1: Fetch ──────────────────────────────
@@ -93,7 +92,7 @@ class NewsPipeline:
         else:
             _step(3, "Skipping DB save (not live)")
 
-        # ── Step 4: Select diverse top picks ──────────
+        # ── Step 4: Select + advance rotation ─────────
         _step(4, "Selecting diverse top picks...")
         order = get_rotated_order()
 
@@ -105,37 +104,44 @@ class NewsPipeline:
                 min_score=config.PIPELINE["min_score"],
             )
         else:
-            # Simulate from in-memory processed articles
             selected = _simulate_selection(processed, limit, order)
 
         log.info(f"  ✅ {len(selected)} articles selected")
         _show_selection(selected)
 
-        # ── Step 5: Post (Telegram approval → platforms)
-        if live and selected:
-            _step(5, "Approval & posting...")
-            self.poster.start()
-            summary = self.poster.post_articles(selected)
-            log.info(f"  ✅ Post summary: {summary}")
-        else:
-            _step(5, "Skipping posting (not live)")
-
-        # ── Step 6: Advance rotation ───────────────────
+        # ── Advance rotation HERE (before posting) ─────
+        # Doing this right after selection (not after posting) means:
+        # - Even if posting crashes / Telegram is down / Ctrl+C → rotation still advances
+        # - Articles are already marked 'selected' in DB by get_diverse_top_picks()
+        # - Next run will start from the correct next category
         if live:
             db.advance_rotation()
 
+        # ── Step 5: Approval + Post ────────────────────
+        if live and selected:
+            _step(5, "Telegram approval & posting to platforms...")
+            self.poster.start()
+            summary = self.poster.post_articles(selected)
+            log.info(f"  ✅ Post summary: {summary}")
+        elif not live:
+            _step(5, "Skipping posting (dry run / test mode)")
+        else:
+            _step(5, "Nothing to post")
+
         duration = round(time.time() - t0, 2)
         _metrics(raw, processed, selected, duration, live)
-
         return _result(selected, t0)
 
 
-# ── Helpers ───────────────────────────────────────────
+# ── Display helpers ───────────────────────────────────
 
 def _banner(live: bool):
-    mode = "🚀 LIVE" if live else "💨 DRY RUN"
     if config.TEST_MODE:
         mode = "🧪 TEST"
+    elif live:
+        mode = "🚀 LIVE"
+    else:
+        mode = "💨 DRY RUN"
     print(f"\n{'='*55}")
     print(f"  NEWS AI PIPELINE  |  {config.INSTANCE_DISPLAY}  |  {mode}")
     print(f"{'='*55}\n")
@@ -190,9 +196,7 @@ def _result(articles, t0) -> Dict:
 
 def _simulate_selection(articles: list, limit: int,
                         priority_order: List[str]) -> list:
-    """
-    In-memory round-robin selection for dry runs (mirrors DB logic).
-    """
+    """In-memory round-robin selection for dry runs."""
     candidates = [
         a for a in articles
         if a.get("category") != "NOISE" and a.get("score", 0) > 0
@@ -221,13 +225,11 @@ def _simulate_selection(articles: list, limit: int,
         if not picked:
             break
 
-    # Fallback: fill by score
     if len(selected) < limit:
         remaining = sorted(
             [a for lst in buckets.values() for a in lst
              if a.get("content_hash") not in seen],
-            key=lambda x: x.get("score", 0),
-            reverse=True,
+            key=lambda x: x.get("score", 0), reverse=True,
         )
         for a in remaining:
             if len(selected) >= limit:
@@ -240,25 +242,22 @@ def _simulate_selection(articles: list, limit: int,
 # ── CLI ───────────────────────────────────────────────
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="News AI Pipeline",
-        formatter_class=argparse.RawDescriptionHelpFormatter,
-    )
+    parser = argparse.ArgumentParser(description="News AI Pipeline")
     parser.add_argument("--live",           action="store_true",
-                        help="Live mode: write DB + post to platforms")
+                        help="Live mode: write DB + post")
     parser.add_argument("--test",           action="store_true",
-                        help="Test mode: no DB writes, verbose output")
+                        help="Test: no DB writes, no posting")
     parser.add_argument("--status",         action="store_true",
-                        help="Show DB statistics and exit")
+                        help="Show DB stats and exit")
     parser.add_argument("--reset-rotation", action="store_true",
                         help="Reset category rotation to start")
-    parser.add_argument("--limit",          type=int, default=config.PIPELINE["articles_per_run"],
+    parser.add_argument("--limit",          type=int,
+                        default=config.PIPELINE["articles_per_run"],
                         help="Number of articles to select")
     parser.add_argument("--keep-noise",     action="store_true",
-                        help="Don't filter out NOISE articles")
+                        help="Don't filter NOISE articles")
     args = parser.parse_args()
 
-    # Init DB always (cheap if already exists)
     db.init_db()
 
     if args.test:
@@ -267,7 +266,7 @@ def main():
 
     if args.reset_rotation:
         db.reset_rotation()
-        print("🔄 Rotation reset")
+        print("🔄 Rotation reset to 0")
         if not args.live and not args.status:
             return 0
 
@@ -282,17 +281,16 @@ def main():
 
     config.print_status()
 
-    # Validate config (warn but don't block dry runs)
     problems = config.validate()
     if problems:
         for p in problems:
             log.warning(f"⚠️  Config: {p}")
         if args.live and any("missing" in p.lower() for p in problems):
-            log.error("Fix config problems before running live")
-            return 1
+            # Warn but don't block — platforms handle missing creds gracefully
+            log.warning("Some platform credentials missing — those platforms will be skipped")
 
     pipeline = NewsPipeline()
-    result   = pipeline.run(
+    result = pipeline.run(
         limit      = args.limit,
         live       = args.live,
         skip_noise = not args.keep_noise,
