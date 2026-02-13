@@ -40,7 +40,7 @@ CHROMA_DIR     = DATA_DIR / f"{INSTANCE_NAME}_chroma"      # ChromaDB
 DUMMY_IMAGE    = MEDIA_DIR / "dummy.jpg"                   # Fallback post image
 ROTATION_FILE  = DATA_DIR / f"{INSTANCE_NAME}_rotation.json"  # Backup
 
-for _d in [DATA_DIR, LOGS_DIR, MEDIA_DIR]:
+for _d in [DATA_DIR, LOGS_DIR, MEDIA_DIR, MEDIA_DIR / "generated"]:
     _d.mkdir(exist_ok=True)
 
 
@@ -182,6 +182,15 @@ DRY_RUN:      bool = _get_bool("DRY_RUN",      False)   # DB writes, no posts
 AUTO_APPROVE: bool = _get_bool("AUTO_APPROVE", False)   # Skip Telegram approval wait
 APPROVAL_TIMEOUT_SEC: int = _get_int("APPROVAL_TIMEOUT_SEC", 300)  # 5 min default
 
+# Structured approval config (used by poster.py + blogger.py)
+APPROVAL = {
+    "timeout_sec":       _get_int("APPROVAL_TIMEOUT_SEC", 300),
+    "send_delay_sec":    4,    # gap between sending each TG approval message
+    "poll_interval_sec": 30,   # sleep chunk between each poll sweep
+    "post_delay_base":   _get_int("POST_DELAY_BASE_SEC", 30),   # between platform posts
+    "post_delay_jitter": _get_int("POST_DELAY_JITTER_SEC", 60), # random added on top
+}
+
 
 # ── Platform Toggles ──────────────────────────────────
 ENABLED_PLATFORMS: list = [
@@ -231,6 +240,79 @@ RATE_LIMITS = {
     "twitter":   {"requests_per_hour": 300, "retry_attempts": 3, "backoff_base": 2.0},
     "youtube":   {"requests_per_hour": 100, "retry_attempts": 2, "backoff_base": 3.0},
     "telegram":  {"requests_per_hour": 3000, "retry_attempts": 3, "backoff_base": 1.5},
+}
+
+
+# ── Blog / AI Writer Config ───────────────────────────
+BLOG_ENABLED: bool = _get_bool("BLOG_ENABLED", False)
+
+# AI provider priority order — first available & not rate-limited wins
+AI_PROVIDERS = [
+    {
+        "name":    "gemini",
+        "api_key": _get("GEMINI_API_KEY"),
+        "model":   _get("GEMINI_MODEL", "gemini-1.5-flash"),
+        "enabled": bool(_get("GEMINI_API_KEY")),
+    },
+    {
+        "name":    "groq",
+        "api_key": _get("GROQ_API_KEY"),
+        "model":   _get("GROQ_MODEL", "llama-3.1-70b-versatile"),
+        "enabled": bool(_get("GROQ_API_KEY")),
+    },
+    {
+        "name":    "grok",
+        "api_key": _get("GROK_API_KEY"),
+        "model":   _get("GROK_MODEL", "grok-beta"),
+        "enabled": bool(_get("GROK_API_KEY")),
+    },
+    {
+        "name":    "free",                              # Pollinations text (no key)
+        "api_key": "",
+        "model":   "openai",
+        "enabled": True,
+    },
+]
+
+# WordPress (per instance — each niche has its own WP site)
+WORDPRESS = {
+    "url":           _get("WP_URL"),                   # e.g. https://myblog.com
+    "username":      _get("WP_USERNAME"),
+    "app_password":  _get("WP_APP_PASSWORD"),          # WP Application Password
+    "default_status": _get("WP_POST_STATUS", "draft"), # draft | publish
+    "author_id":     _get_int("WP_AUTHOR_ID", 1),
+}
+
+# Image generation
+IMAGE_GEN = {
+    "provider":    "pollinations",                     # only free option for now
+    "base_url":    "https://image.pollinations.ai/prompt/",
+    "width":       1200,
+    "height":      630,                                # OG image ratio
+    "model":       _get("POLLINATIONS_MODEL", "flux"),
+    "save_dir":    MEDIA_DIR / "generated",
+    "timeout_sec": 60,
+}
+
+# Blog generation settings
+BLOG_CONFIG = {
+    # Content fetch
+    "fetch_timeout_sec":    15,
+    "max_content_chars":    8000,                      # truncate before sending to AI
+    "user_agent":           "Mozilla/5.0 (compatible; NewsBlogBot/1.0)",
+
+    # AI prompt
+    "min_word_count":       600,
+    "max_word_count":       1200,
+    "language":             _get("BLOG_LANGUAGE", "English"),
+    "tone":                 _get("BLOG_TONE", "informative, friendly, SEO-optimized"),
+
+    # Approval
+    "approval_timeout_sec": 600,                       # 10 min for blog (longer than news)
+    "approval_poll_sec":    10,                        # check every 10s (not 2s)
+
+    # Rate limit tracking file (per instance)
+    "rate_limit_file":      DATA_DIR / f"{INSTANCE_NAME}_ai_rate_limits.json",
 }
 
 

@@ -255,10 +255,16 @@ def main():
                         default=config.PIPELINE["articles_per_run"],
                         help="Number of articles to select")
     parser.add_argument("--keep-noise",     action="store_true",
-                        help="Don't filter NOISE articles")
+                        help="Don't filter NOISE articles"),
+    parser.add_argument("--requeue-failed", action="store_true")
+
+
     args = parser.parse_args()
 
     db.init_db()
+
+    if args.requeue_failed:
+    db.mark_articles_status_by_status(["selected", "failed"], "pending")
 
     if args.test:
         config.TEST_MODE = True
