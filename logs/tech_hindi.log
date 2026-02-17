@@ -1,0 +1,236 @@
+2026-02-13 07:06:45,336 [db] INFO: ✅ SQLite ready: /workspaces/piepline/data/tech_hindi.db
+2026-02-13 07:06:51,362 [ai] INFO: ✅ SentenceTransformers available
+2026-02-13 07:06:51,364 [ai] INFO: 🧠 Computing category anchor embeddings...
+2026-02-13 07:06:51,365 [ai] INFO: 📥 Loading model: all-MiniLM-L6-v2 ...
+2026-02-13 07:06:51,365 [sentence_transformers.SentenceTransformer] INFO: Use pytorch device_name: cpu
+2026-02-13 07:06:51,365 [sentence_transformers.SentenceTransformer] INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-13 07:06:51,649 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:51,658 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:51,669 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:51,891 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:51,900 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:51,908 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:52,111 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:52,120 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:52,343 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:52,351 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-02-13 07:06:52,358 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-02-13 07:06:52,572 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:52,580 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:52,784 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:52,793 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:52,801 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:53,007 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-02-13 07:06:53,007 [huggingface_hub.utils._http] WARNING: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-02-13 07:06:53,226 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:53,235 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:53,242 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:53,515 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-02-13 07:06:53,759 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/xet-read-token/c9745ed1d9f207416be6d2e6f8de32d1f16199bf "HTTP/1.1 200 OK"
+2026-02-13 07:06:55,575 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:55,583 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:55,803 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:55,812 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:55,820 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:56,060 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-13 07:06:56,271 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 07:06:56,474 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:56,482 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/vocab.txt "HTTP/1.1 200 OK"
+2026-02-13 07:06:56,490 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/vocab.txt "HTTP/1.1 200 OK"
+2026-02-13 07:06:56,703 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:56,711 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:56,719 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:56,933 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-02-13 07:06:57,141 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:57,150 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:57,158 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:57,366 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-02-13 07:06:57,666 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:06:57,676 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:57,684 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-02-13 07:06:57,896 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-02-13 07:06:57,901 [ai] INFO: ✅ Model loaded: all-MiniLM-L6-v2
+2026-02-13 07:06:58,166 [ai] INFO: ✅ Embedded 7 texts via all-MiniLM-L6-v2
+2026-02-13 07:06:58,166 [ai] INFO: ✅ 7 anchors ready (local AI)
+2026-02-13 07:06:58,167 [main] INFO: STEP 1: Fetching RSS feeds...
+2026-02-13 07:06:58,167 [parser] INFO: 📡 Fetching 11 RSS feeds...
+2026-02-13 07:07:00,396 [parser] INFO: ✅ 223 unique articles fetched
+2026-02-13 07:07:00,396 [main] INFO:   ✅ 223 unique articles fetched
+2026-02-13 07:07:00,397 [main] INFO: STEP 2: AI classification & scoring...
+2026-02-13 07:07:00,397 [ai] INFO: 🧠 Processing 223 articles...
+2026-02-13 07:07:04,805 [ai] INFO: ✅ Embedded 223 texts via all-MiniLM-L6-v2
+2026-02-13 07:07:04,856 [ai] INFO: ✅ Done. Methods used: {'embedding': 223}
+2026-02-13 07:07:04,856 [main] INFO:   ✅ 223 articles processed
+2026-02-13 07:07:04,856 [main] INFO: STEP 3: Skipping DB save (not live)
+2026-02-13 07:07:04,856 [main] INFO: STEP 4: Selecting diverse top picks...
+2026-02-13 07:07:04,857 [main] INFO: 🔄 Run #0 | Starting from: WELFARE
+2026-02-13 07:07:04,857 [main] INFO:    Order: WELFARE → ALERTS → WAR_GEO → POLITICS → FINANCE → TECH_SCI
+2026-02-13 07:07:04,857 [main] INFO:   ✅ 4 articles selected
+2026-02-13 07:07:04,858 [main] INFO: STEP 5: Skipping posting (not live)
+2026-02-13 07:09:23,502 [db] INFO: ✅ SQLite ready: /workspaces/piepline/data/tech_hindi.db
+2026-02-13 07:09:30,156 [ai] INFO: ✅ SentenceTransformers available
+2026-02-13 07:09:30,159 [ai] INFO: 🧠 Computing category anchor embeddings...
+2026-02-13 07:09:30,159 [ai] INFO: 📥 Loading model: all-MiniLM-L6-v2 ...
+2026-02-13 07:09:30,160 [sentence_transformers.SentenceTransformer] INFO: Use pytorch device_name: cpu
+2026-02-13 07:09:30,160 [sentence_transformers.SentenceTransformer] INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-13 07:09:30,425 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:30,433 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:30,638 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:30,645 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:30,854 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:30,855 [huggingface_hub.utils._http] WARNING: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-02-13 07:09:30,865 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:31,069 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:31,077 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-02-13 07:09:31,282 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:31,289 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:31,496 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:31,504 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:31,716 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-02-13 07:09:32,289 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:32,297 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:32,702 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:32,710 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:32,915 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:32,923 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:33,130 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-13 07:09:33,361 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 07:09:33,621 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:09:33,629 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-02-13 07:09:33,841 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-02-13 07:09:33,845 [ai] INFO: ✅ Model loaded: all-MiniLM-L6-v2
+2026-02-13 07:09:33,934 [ai] INFO: ✅ Embedded 7 texts via all-MiniLM-L6-v2
+2026-02-13 07:09:33,935 [ai] INFO: ✅ 7 anchors ready (local AI)
+2026-02-13 07:09:33,935 [main] INFO: STEP 1: Fetching RSS feeds...
+2026-02-13 07:09:33,935 [parser] INFO: 📡 Fetching 11 RSS feeds...
+2026-02-13 07:09:35,709 [parser] INFO: ✅ 223 unique articles fetched
+2026-02-13 07:09:35,710 [main] INFO:   ✅ 223 unique articles fetched
+2026-02-13 07:09:35,710 [main] INFO: STEP 2: AI classification & scoring...
+2026-02-13 07:09:35,710 [ai] INFO: 🧠 Processing 223 articles...
+2026-02-13 07:09:40,102 [ai] INFO: ✅ Embedded 223 texts via all-MiniLM-L6-v2
+2026-02-13 07:09:40,153 [ai] INFO: ✅ Done. Methods used: {'embedding': 223}
+2026-02-13 07:09:40,153 [main] INFO:   ✅ 223 articles processed
+2026-02-13 07:09:40,154 [main] INFO: STEP 3: Saving to SQLite + ChromaDB...
+2026-02-13 07:09:44,659 [chromadb.telemetry.product.posthog] INFO: Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2026-02-13 07:09:44,928 [db] INFO: ✅ ChromaDB ready: /workspaces/piepline/data/tech_hindi_chroma
+2026-02-13 07:09:48,090 [db] INFO: 💾 Saved 219/219 new articles to DB
+2026-02-13 07:09:48,091 [main] INFO:   ✅ 219 new articles saved
+2026-02-13 07:09:48,091 [main] INFO: STEP 4: Selecting diverse top picks...
+2026-02-13 07:09:48,092 [main] INFO: 🔄 Run #0 | Starting from: WELFARE
+2026-02-13 07:09:48,092 [main] INFO:    Order: WELFARE → ALERTS → WAR_GEO → POLITICS → FINANCE → TECH_SCI
+2026-02-13 07:09:48,093 [db] INFO: ✅ Selected 4 diverse articles
+2026-02-13 07:09:48,093 [main] INFO:   ✅ 4 articles selected
+2026-02-13 07:09:48,094 [main] INFO: STEP 5: Approval & posting...
+2026-02-13 07:09:48,102 [poster] INFO: ✅ Poster ready. Platforms: ['telegram', 'facebook']
+2026-02-13 07:09:48,824 [platform.telegram] ERROR: Telegram request failed (sendPhoto): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/sendPhoto
+2026-02-13 07:09:49,368 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:09:51,917 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:09:54,446 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:09:56,991 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:09:59,534 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:10:02,081 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:10:04,628 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:10:07,170 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:10:40,158 [db] INFO: ✅ SQLite ready: /workspaces/piepline/data/tech_hindi.db
+2026-02-13 07:10:45,650 [ai] INFO: ✅ SentenceTransformers available
+2026-02-13 07:10:45,653 [ai] INFO: 🧠 Computing category anchor embeddings...
+2026-02-13 07:10:45,653 [ai] INFO: 📥 Loading model: all-MiniLM-L6-v2 ...
+2026-02-13 07:10:45,654 [sentence_transformers.SentenceTransformer] INFO: Use pytorch device_name: cpu
+2026-02-13 07:10:45,655 [sentence_transformers.SentenceTransformer] INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-13 07:10:45,946 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:45,954 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:46,207 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:46,215 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:46,419 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:46,428 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:46,632 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:46,640 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md "HTTP/1.1 200 OK"
+2026-02-13 07:10:46,880 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:46,887 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:47,100 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:47,108 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:47,314 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-02-13 07:10:47,535 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:47,543 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:47,909 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:47,919 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:48,125 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:48,135 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:48,372 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-02-13 07:10:48,611 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-02-13 07:10:48,872 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-02-13 07:10:48,880 [httpx] INFO: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-02-13 07:10:49,088 [httpx] INFO: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-02-13 07:10:49,093 [ai] INFO: ✅ Model loaded: all-MiniLM-L6-v2
+2026-02-13 07:10:49,182 [ai] INFO: ✅ Embedded 7 texts via all-MiniLM-L6-v2
+2026-02-13 07:10:49,182 [ai] INFO: ✅ 7 anchors ready (local AI)
+2026-02-13 07:10:49,182 [main] INFO: STEP 1: Fetching RSS feeds...
+2026-02-13 07:10:49,182 [parser] INFO: 📡 Fetching 11 RSS feeds...
+2026-02-13 07:10:51,009 [parser] INFO: ✅ 223 unique articles fetched
+2026-02-13 07:10:51,009 [main] INFO:   ✅ 223 unique articles fetched
+2026-02-13 07:10:51,010 [main] INFO: STEP 2: AI classification & scoring...
+2026-02-13 07:10:51,010 [ai] INFO: 🧠 Processing 223 articles...
+2026-02-13 07:10:55,218 [ai] INFO: ✅ Embedded 223 texts via all-MiniLM-L6-v2
+2026-02-13 07:10:55,268 [ai] INFO: ✅ Done. Methods used: {'embedding': 223}
+2026-02-13 07:10:55,269 [main] INFO:   ✅ 223 articles processed
+2026-02-13 07:10:55,269 [main] INFO: STEP 3: Saving to SQLite + ChromaDB...
+2026-02-13 07:10:55,271 [db] INFO: 💤 All articles already exist in DB
+2026-02-13 07:10:55,271 [main] INFO:   ✅ 0 new articles saved
+2026-02-13 07:10:55,271 [main] INFO: STEP 4: Selecting diverse top picks...
+2026-02-13 07:10:55,272 [main] INFO: 🔄 Run #0 | Starting from: WELFARE
+2026-02-13 07:10:55,272 [main] INFO:    Order: WELFARE → ALERTS → WAR_GEO → POLITICS → FINANCE → TECH_SCI
+2026-02-13 07:10:55,273 [db] INFO: ✅ Selected 4 diverse articles
+2026-02-13 07:10:55,273 [main] INFO:   ✅ 4 articles selected
+2026-02-13 07:10:55,274 [main] INFO: STEP 5: Approval & posting...
+2026-02-13 07:10:55,318 [poster] INFO: ✅ Poster ready. Platforms: ['telegram', 'facebook']
+2026-02-13 07:10:56,029 [platform.telegram] ERROR: Telegram request failed (sendPhoto): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/sendPhoto
+2026-02-13 07:10:56,575 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:10:59,135 [platform.telegram] ERROR: Telegram request failed (getUpdates): 401 Client Error: Unauthorized for url: https://api.telegram.org/bot1234567890:ABCdefGHIjklMNOpqrSTUvwxyz/getUpdates
+2026-02-13 07:32:13,962 [db] INFO: ✅ SQLite ready: /workspaces/piepline/data/tech_hindi.db
+2026-02-13 07:32:19,326 [ai] INFO: ✅ SentenceTransformers available
+2026-02-13 07:32:19,328 [ai] INFO: 🧠 Computing category anchor embeddings...
+2026-02-13 07:32:19,328 [ai] INFO: 📥 Loading model: all-MiniLM-L6-v2 ...
+2026-02-13 07:32:19,329 [sentence_transformers.SentenceTransformer] INFO: Use pytorch device_name: cpu
+2026-02-13 07:32:19,329 [sentence_transformers.SentenceTransformer] INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-13 07:32:19,564 [ai] INFO: ✅ Model loaded: all-MiniLM-L6-v2
+2026-02-13 07:32:19,651 [ai] INFO: ✅ Embedded 7 texts via all-MiniLM-L6-v2
+2026-02-13 07:32:19,651 [ai] INFO: ✅ 7 anchors ready (local AI)
+2026-02-13 07:32:19,651 [main] INFO: STEP 1: Fetching RSS feeds...
+2026-02-13 07:32:19,651 [parser] INFO: 📡 Fetching 11 RSS feeds...
+2026-02-13 07:32:21,570 [parser] INFO: ✅ 222 unique articles fetched
+2026-02-13 07:32:21,571 [main] INFO:   ✅ 222 unique articles fetched
+2026-02-13 07:32:21,571 [main] INFO: STEP 2: AI classification & scoring...
+2026-02-13 07:32:21,571 [ai] INFO: 🧠 Processing 222 articles...
+2026-02-13 07:32:25,729 [ai] INFO: ✅ Embedded 222 texts via all-MiniLM-L6-v2
+2026-02-13 07:32:25,782 [ai] INFO: ✅ Done. Methods used: {'embedding': 222}
+2026-02-13 07:32:25,782 [main] INFO:   ✅ 222 articles processed
+2026-02-13 07:32:25,782 [main] INFO: STEP 3: Saving to SQLite + ChromaDB...
+2026-02-13 07:32:29,935 [db] INFO: ✅ ChromaDB ready: /workspaces/piepline/data/tech_hindi_chroma
+2026-02-13 07:32:30,029 [db] INFO: 💾 Saved 4/4 new articles to DB
+2026-02-13 07:32:30,029 [main] INFO:   ✅ 4 new articles saved
+2026-02-13 07:32:30,029 [main] INFO: STEP 4: Selecting diverse top picks...
+2026-02-13 07:32:30,030 [main] INFO: 🔄 Run #0 | Rotation index=0 | Starting from: WELFARE
+2026-02-13 07:32:30,030 [main] INFO:    Order: WELFARE → ALERTS → WAR_GEO → POLITICS → FINANCE → TECH_SCI
+2026-02-13 07:32:30,037 [db] INFO: ✅ 4 articles marked 'selected': ['WELFARE', 'ALERTS', 'WAR_GEO', 'POLITICS']
+2026-02-13 07:32:30,037 [main] INFO:   ✅ 4 articles selected
+2026-02-13 07:32:30,043 [db] INFO: 🔄 Rotation → index=1 run=1
+2026-02-13 07:32:30,043 [main] INFO: STEP 5: Telegram approval & posting to platforms...
+2026-02-13 07:32:30,052 [poster] INFO: ✅ Poster ready. Platforms: ['telegram', 'facebook']
+2026-02-13 07:33:19,925 [platform.telegram] INFO: ⏳ Post delay: 72s (30s base + 42s jitter)
+2026-02-13 07:34:31,926 [poster] INFO: ✅ Approved: Government’s Big Relief Scheme: Free Treatment Up to ₹5 Lakh
+2026-02-13 07:34:41,397 [platform.facebook] INFO: ✅ Facebook image posted: 890887797446499_122113500609172962
+2026-02-13 07:34:41,404 [poster] INFO:   ✅ facebook: 890887797446499_122113500609172962
+2026-02-13 07:38:19,993 [platform.telegram] INFO: ⏳ Post delay: 63s (30s base + 33s jitter)
+2026-02-13 07:39:22,995 [poster] INFO: ✅ Approved: India Lost Rs 54,000 Crore To 'Digital Arrest' Scams. What M
+2026-02-13 07:39:27,139 [platform.facebook] INFO: ✅ Facebook image posted: 890887797446499_122113501155172962
+2026-02-13 07:39:27,146 [poster] INFO:   ✅ facebook: 890887797446499_122113501155172962
+2026-02-13 07:39:27,151 [platform.telegram] INFO: ⏳ Post delay: 87s (30s base + 57s jitter)
+2026-02-13 07:40:54,152 [poster] INFO: ✅ Approved: Is genocide still happening in Gaza?
+2026-02-13 07:40:59,190 [platform.facebook] INFO: ✅ Facebook image posted: 890887797446499_122113501395172962
+2026-02-13 07:40:59,196 [poster] INFO:   ✅ facebook: 890887797446499_122113501395172962
+2026-02-13 07:40:59,201 [platform.telegram] INFO: ⏳ Post delay: 41s (30s base + 11s jitter)
+2026-02-13 07:41:40,202 [poster] INFO: ✅ Approved: Parliament Budget Session Day 13 Live Updates: Lok Sabha Pro
+2026-02-13 07:41:44,633 [platform.facebook] INFO: ✅ Facebook image posted: 890887797446499_122113501551172962
+2026-02-13 07:41:44,639 [poster] INFO:   ✅ facebook: 890887797446499_122113501551172962
+2026-02-13 07:41:44,645 [poster] INFO: 📊 Posting done: {'approved': 4, 'skipped': 0, 'posted': 4, 'errors': 0}
+2026-02-13 07:41:44,645 [main] INFO:   ✅ Post summary: {'approved': 4, 'skipped': 0, 'posted': 4, 'errors': 0}

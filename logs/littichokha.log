@@ -1,0 +1,25 @@
+2026-02-17 11:33:57,098 [db] INFO: ✅ SQLite ready: /workspaces/piepline/data/littichokha.db
+2026-02-17 11:35:43,578 [db] INFO: ✅ SQLite ready: /workspaces/piepline/data/littichokha.db
+2026-02-17 11:35:49,483 [ai] INFO: ✅ SentenceTransformers available
+2026-02-17 11:35:49,485 [ai] INFO: 🧠 Computing category anchor embeddings...
+2026-02-17 11:35:49,485 [ai] INFO: 📥 Loading model: all-MiniLM-L6-v2 ...
+2026-02-17 11:35:49,486 [sentence_transformers.SentenceTransformer] INFO: Use pytorch device_name: cpu
+2026-02-17 11:35:49,486 [sentence_transformers.SentenceTransformer] INFO: Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2026-02-17 11:35:53,026 [ai] INFO: ✅ Model loaded: all-MiniLM-L6-v2
+2026-02-17 11:35:58,391 [ai] INFO: ✅ Embedded 7 texts via all-MiniLM-L6-v2
+2026-02-17 11:35:58,392 [ai] INFO: ✅ 7 anchors ready (local AI)
+2026-02-17 11:35:58,392 [main] INFO: STEP 1: Fetching RSS feeds...
+2026-02-17 11:35:58,392 [parser] INFO: 📡 Fetching 11 RSS feeds...
+2026-02-17 11:36:00,529 [parser] INFO: ✅ 214 unique articles fetched
+2026-02-17 11:36:00,530 [main] INFO:   ✅ 214 unique articles fetched
+2026-02-17 11:36:00,530 [main] INFO: STEP 2: AI classification & scoring...
+2026-02-17 11:36:00,530 [ai] INFO: 🧠 Processing 214 articles...
+2026-02-17 11:36:04,926 [ai] INFO: ✅ Embedded 214 texts via all-MiniLM-L6-v2
+2026-02-17 11:36:04,982 [ai] INFO: ✅ Done. Methods used: {'embedding': 214}
+2026-02-17 11:36:04,982 [main] INFO:   ✅ 214 articles processed
+2026-02-17 11:36:04,983 [main] INFO: STEP 3: Skipping DB save (not live)
+2026-02-17 11:36:04,983 [main] INFO: STEP 4: Selecting diverse top picks...
+2026-02-17 11:36:04,984 [main] INFO: 🔄 Run #0 | Rotation index=0 | Starting from: WELFARE
+2026-02-17 11:36:04,985 [main] INFO:    Order: WELFARE → ALERTS → WAR_GEO → POLITICS → FINANCE → TECH_SCI
+2026-02-17 11:36:04,985 [main] INFO:   ✅ 4 articles selected
+2026-02-17 11:36:04,986 [main] INFO: STEP 5: Skipping posting (dry run / test mode)

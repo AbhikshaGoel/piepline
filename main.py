@@ -264,7 +264,7 @@ def main():
     db.init_db()
 
     if args.requeue_failed:
-    db.mark_articles_status_by_status(["selected", "failed"], "pending")
+        db.mark_articles_status_by_status(["selected", "failed"], "pending")
 
     if args.test:
         config.TEST_MODE = True
